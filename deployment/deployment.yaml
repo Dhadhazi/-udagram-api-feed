@@ -17,7 +17,9 @@ spec:
       containers:
         - image: dhadhazi/udagram-api-feed
           name: udagram-api-feed
-          imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: env-secrets
       restartPolicy: Always
